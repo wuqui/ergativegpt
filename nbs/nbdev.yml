@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "ergativegpt"
+  site-url: "https://wuqui.github.io/ergativegpt"
+  description: "Analyzing ergatives using GPT."
+  repo-branch: main
+  repo-url: "https://github.com/wuqui/ergativegpt"
