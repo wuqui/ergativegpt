@@ -3,7 +3,7 @@
 # %% auto 0
 __all__ = ['UtteranceClassification']
 
-# %% ../nbs/00_core.ipynb 8
+# %% ../nbs/00_core.ipynb 11
 from langchain.pydantic_v1 import BaseModel, Field
 
 class UtteranceClassification(BaseModel):
