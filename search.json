@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ErgativeGPT",
+    "section": "",
+    "text": "documentation: https://wuqui.github.io/ergativegpt/"
+  },
+  {
+    "objectID": "src.html",
+    "href": "src.html",
+    "title": "source functions",
+    "section": "",
+    "text": "source\n\nUtteranceClassification\n\n UtteranceClassification (gpt_transitivity:str, gpt_causativity:str,\n                          gpt_subject_animacy:str, gpt_subject_role:str,\n                          gpt_subject:str, gpt_verb:str, gpt_object:str)\n\nClassifying the utterances according to linguistic criteria.\n\nsource\n\n\nget_metrics\n\n get_metrics (results, variable, pos_label)"
+  },
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "pipeline",
+    "section": "",
+    "text": "The autoreload extension is already loaded. To reload it, use:\n  %reload_ext autoreload\nfrom ergativegpt.src import *\nimport pandas as pd\n\nfrom langchain.chains.openai_functions import create_structured_output_runnable\nfrom langchain.chat_models import ChatOpenAI\nfrom langchain.prompts import ChatPromptTemplate\n\nfrom tqdm.notebook import tqdm\n\nfrom sklearn.metrics import precision_recall_fscore_support,  accuracy_score\n\nimport altair as alt\n\nfrom datetime import datetime"
+  },
+  {
+    "objectID": "core.html#load-data",
+    "href": "core.html#load-data",
+    "title": "pipeline",
+    "section": "load data",
+    "text": "load data\n\ndf = pd.read_excel('../in/Data_GPT.xlsx')\ndf\n\n\n\n\n\n\n\n\nToken\nCorpus\nSource\nYear\nVariety\nverbRealization\nverbLemma\nTransitivity\nTransitivity_GPT\nsubjectAnimacy\nsubjectAnimacy_GPT\nsubjectRole\nsubjectRole_GPT\nConstruction\nConstruction_GPT\n\n\n\n\n0\nAndroid 12 will let users play games as they'r...\nNOW\nhttps://www.digitaltrends.com/gaming/android-1...\n2021\nAmE\ndownloading\ndownload\nIntransitive\nNaN\nInanimate\nNaN\nPatient\nNaN\n1\nNaN\n\n\n1\nThere's also a new feature that will let you u...\nNOW\nhttps://www.androidheadlines.com/2021/10/googl...\n2021\nAmE\ndownloading\ndownload\nIntransitive\nNaN\nInanimate\nNaN\nPatient\nNaN\n1\nNaN\n\n\n2\nClick Next and Windows 10 will install.\nNOW\nhttps://uk.pcmag.com/migrated-3765-windows-10/...\n2022\nAmE\ninstall\ninstall\nIntransitive\nNaN\nInanimate\nNaN\nPatient\nNaN\n1\nNaN\n\n\n3\nIf your Kindle is connected to Wi-Fi, the upda...\nNOW\nhttps://techcrunch.com/2021/09/13/kindle-relea...\n2021\nAmE\ninstall\ninstall\nIntransitive\nNaN\nInanimate\nNaN\nPatient\nNaN\n1\nNaN\n\n\n4\nThe first two are available right now, while W...\nNOW\nhttps://techcrunch.com/2022/06/30/raspberry-pi...\n2022\nAmE\nshipping\nship\nIntransitive\nNaN\nInanimate\nNaN\nPatient\nNaN\n1\nNaN\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n95\nHe's been uploading videos so students can sta...\nNOW\nhttps://www.thenation.com/article/society/arka...\n2021\nAmE\nuploading\nupload\nTransitive\nNaN\nAnimate\nNaN\nAgent\nNaN\n0\nNaN\n\n\n96\nOnce you've been uploading content regularly, ...\nNOW\nhttps://www.entrepreneur.com/article/381562\n2021\nAmE\nuploading\nupload\nTransitive\nNaN\nAnimate\nNaN\nAgent\nNaN\n0\nNaN\n\n\n97\nThe cast members have also been uploading phot...\nNOW\nhttps://www.soompi.com/article/1491029wpp/lee-...\n2021\nAmE\nuploading\nupload\nTransitive\nNaN\nAnimate\nNaN\nAgent\nNaN\n0\nNaN\n\n\n98\nThe parody videos that' Squid Game' viewers ha...\nNOW\nhttps://www.soompi.com/article/1491029wpp/lee-...\n2021\nAmE\nuploading\nupload\nTransitive\nNaN\nAnimate\nNaN\nAgent\nNaN\n0\nNaN\n\n\n99\nSome even think we will eventually upload ours...\nNOW\nhttp://www.ft.com/cms/s/2/b4938bbc-fa65-11e0-b...\n2011\nBrE\nupload\nupload\nTransitive\nNaN\nAnimate\nNaN\nAgent\nNaN\n0\nNaN\n\n\n\n\n100 rows × 15 columns"
+  },
+  {
+    "objectID": "core.html#set-up-model",
+    "href": "core.html#set-up-model",
+    "title": "pipeline",
+    "section": "set up model",
+    "text": "set up model\n\nmodel=\"gpt-3.5-turbo\"\n# model=\"gpt-4\"\n\nllm = ChatOpenAI(model=model, temperature=0)\n\n\nwith open('../in/prompt.md', 'r') as f:\n        prompt_txt = f.read()\n\n\nprompt = ChatPromptTemplate.from_messages([\n        (\"system\", prompt_txt),\n        (\"human\", 'Please classify the following sentence: {input}')\n])\n\n\nrunnable = create_structured_output_runnable(UtteranceClassification, llm, prompt)"
+  },
+  {
+    "objectID": "core.html#run-processing",
+    "href": "core.html#run-processing",
+    "title": "pipeline",
+    "section": "run processing",
+    "text": "run processing\n\nresults_list = []\n\ndf_dev = (df\n    .sample(1)\n)\n\nfor _, row in tqdm(df_dev.iterrows(), total=len(df_dev)):\n    try:\n        result = runnable.invoke({\"input\": row['verbRealization'] + ' in: ' + row['Token']})\n        row_data = {\n            'text': row['Token'],\n            'transitivity': row['Transitivity'],\n            'gpt_transitivity': result.gpt_transitivity,\n            'causativity': row['Construction'],\n            'gpt_causativity': result.gpt_causativity,\n            'subject_animacy': row['subjectAnimacy'],\n            'gpt_subject_animacy': result.gpt_subject_animacy,\n            'subject_role': row['subjectRole'],\n            'gpt_subject_role': result.gpt_subject_role,\n\n            'gpt_subject': result.gpt_subject,\n            'gpt_verb': result.gpt_verb,\n            'gpt_object': result.gpt_object\n        }\n        results_list.append(row_data)\n    except:\n        continue\n\nresults = pd.DataFrame(results_list)\n\n\n\n\n\n# if 'results' not in globals():\nresults = pd.read_csv('../out/2023-12-14_23:27_results.csv')"
+  },
+  {
+    "objectID": "core.html#calculate-metrics",
+    "href": "core.html#calculate-metrics",
+    "title": "pipeline",
+    "section": "calculate metrics",
+    "text": "calculate metrics\nalign labels of factor levels between human and gpt labelling\n\nresults['transitivity'] = results['transitivity'].replace({'Transitive': 'transitive', 'Intransitive': 'intransitive'})\nresults['causativity'] = results['causativity'].replace({0: 'causative', 1: 'anticausative'})\nresults['subject_animacy'] = results['subject_animacy'].replace({'Animate': 'animate', 'Inanimate': 'inanimate'})\nresults['subject_role'] = results['subject_role'].replace({'Agent': 'agent', 'Patient': 'patient'})\n\nset variables and positive labels\n\nvars = {'transitivity': 'intransitive',\n    'causativity': 'anticausative',\n    'subject_animacy': 'inanimate',\n    'subject_role': 'patient'}\n\ncalculate metrics\n\nmetrics_vars = []\nfor var in vars.items():\n    metrics_var = get_metrics(results, var[0], var[1])\n    metrics_vars.append(metrics_var)\n\nmetrics = pd.concat(metrics_vars)\n\nmetrics\n\n\n\n\n\n\n\n\nvariable\nmetric\nscore\n\n\n\n\n0\ntransitivity\nprecision\n0.98\n\n\n1\ntransitivity\nrecall\n0.78\n\n\n2\ntransitivity\naccuracy\n0.85\n\n\n3\ntransitivity\nF1\n0.87\n\n\n0\ncausativity\nprecision\n0.94\n\n\n1\ncausativity\nrecall\n0.34\n\n\n2\ncausativity\naccuracy\n0.66\n\n\n3\ncausativity\nF1\n0.50\n\n\n0\nsubject_animacy\nprecision\n1.00\n\n\n1\nsubject_animacy\nrecall\n0.93\n\n\n2\nsubject_animacy\naccuracy\n0.96\n\n\n3\nsubject_animacy\nF1\n0.97\n\n\n0\nsubject_role\nprecision\n0.95\n\n\n1\nsubject_role\nrecall\n0.35\n\n\n2\nsubject_role\naccuracy\n0.64\n\n\n3\nsubject_role\nF1\n0.51\n\n\n\n\n\n\n\nplot metrics\n\nchart = alt.Chart(metrics).mark_bar().encode(\n    y='score:Q',\n    x=alt.X('metric:N', sort=metrics['metric'].tolist()),\n    color=alt.Color('metric', legend=None),\n).facet(column='variable:N')\n\nchart"
+  },
+  {
+    "objectID": "core.html#save-results",
+    "href": "core.html#save-results",
+    "title": "pipeline",
+    "section": "save results",
+    "text": "save results\ncurrent_datetime = datetime.now() formatted_date = current_datetime.strftime(“%Y-%m-%d_%H:%M”)\nwith open(f’../out/{formatted_date}_prompt.md’, ‘w’) as f_prompt: f_prompt.write(prompt_txt)\nwith open(f’../out/{formatted_date}_model.md’, ‘w’) as f_prompt: f_prompt.write(model)\nchart.save(f’../out/{formatted_date}_metrics_plot.png’, scale=2.0)\nresults.to_csv(f’../out/{formatted_date}_results.csv’, index=False)"
+  }
+]
