@@ -5,4 +5,5 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://wuqui.github.io',
                 'git_url': 'https://github.com/wuqui/ergativegpt',
                 'lib_path': 'ergativegpt'},
-  'syms': {'ergativegpt.core': {'ergativegpt.core.foo': ('core.html#foo', 'ergativegpt/core.py')}}}
+  'syms': { 'ergativegpt.core': {'ergativegpt.core.UtteranceClassification': ('core.html#utteranceclassification', 'ergativegpt/core.py')},
+            'ergativegpt.src': {'ergativegpt.src.UtteranceClassification': ('src.html#utteranceclassification', 'ergativegpt/src.py')}}}

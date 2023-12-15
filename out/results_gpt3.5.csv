@@ -1,0 +1,99 @@
+Token,Transitivity,subjectAnimacy,subjectRole,gpt_transitivity,gpt_subject,gpt_verb,gpt_object,gpt_subject_animacy,gpt_subject_role
+Elizabeth has been uploading one throwback bikini post a day since Jan.,Transitive,0,Agent,0,Elizabeth,uploading,,0,agent
+"For about a year now, Herrod has been uploading videos about the pandemic and American politics.",Transitive,0,Agent,1,Herrod,uploading,videos about the pandemic and American politics,0,agent
+Other opportunists have uploaded their own war forgeries to TikTok.,Transitive,0,Agent,1,Other opportunists,uploaded,their own war forgeries,0,agent
+Sometimes people will upload a game before it's taken down after a year or so.,Transitive,0,Agent,1,people,upload,a game,0,agent
+"However, it will upload each clip in its entirety.",Transitive,1,Agent,1,it,upload,each clip,1,agent
+Neil Patrick Harris is uploading himself to The Matrix 4.,Transitive,0,Agent,1,Neil Patrick Harris,uploading,himself,0,agent
+Android 12 will let users play games as they're downloading.,Intransitive,1,Patient,1,Android 12,will let,users play games,1,agent
+Click Next and Windows 10 will install.,Intransitive,1,Patient,1,Windows 10,install,Next,1,agent
+"If your Kindle is connected to Wi-Fi, the update will install automatically, but you can manually download it here.",Intransitive,1,Patient,1,your Kindle,install,the update,1,agent
+The feature had installed itself automatically on the PS3.,Transitive,1,Agent,1,The feature,installed,itself,1,agent
+"The first two are available right now, while WH is shipping at some point in August.",Intransitive,1,Patient,0,The first two,are,,1,subject
+This unit is shipping to an existing customer for a new application that is expected to outgrow the WFE market over the next several years.,Intransitive,1,Patient,0,This unit,is shipping,,1,agent
+Hyperion 8 is shipping in 2024 and Hyperion 9 will ship in 2026.,Intransitive,1,Patient,0,Hyperion 8,is shipping,,1,subject
+"The company has confirmed that one Arc Alchemist laptop is shipping in South Korea, but even though it's been a while, these laptops haven't become widespread.",Intransitive,1,Patient,1,The company,has confirmed,that one Arc Alchemist laptop is shipping in South Korea,1,agent
+"Under the hood, Ubuntu 22.10 is shipping with the new 5.19 Linux kernel.",Intransitive,1,Patient,1,Ubuntu 22.10,is shipping,the new 5.19 Linux kernel,1,subject
+"That is, you'll be offered the Creators Update through Windows Update sometime after the release goes public, when you accept the offer, the update will download itself and get installed on your PC(s).",Transitive,1,Agent,1,you,accept,the offer,0,agent
+"But since then, I've been uploading pretty steadily onto like every internet platform.",Intransitive,0,Agent,0,I,uploading,,0,agent
+What was amazing to me was that librarians created a Google Doc requesting people to upload copies of materials they had used in the Jagger Library to create a digital repository and people have been uploading from around the world.,Intransitive,0,Agent,1,librarians,created,a Google Doc,0,agent
+"We both got into NYU, and literally that first week of school, we got the microphone and shot that first video and have been uploading ever since.",Intransitive,0,Agent,1,We,got,the microphone,0,agent
+"In the year that Anthony has been uploading to Citizen, he's filmed hundreds of these videos: 675 to be exact.",Intransitive,0,Agent,0,Anthony,has been uploading,,0,agent
+"After taking a much-needed break over the summer given that she'd been uploading on YouTube for roughly 11 years without pause, Nilsen says she wanted to try her hand at something that she's never done before, and will be crafting all of the candles by hand.",Intransitive,0,Agent,1,Nilsen,crafting,all of the candles,0,agent
+One of the many ambiguities about P2P is that users are uploading as well.,Intransitive,0,Agent,1,users,uploading,as well,0,agent
+"According to McMahon, 95% of the public pathology labs in the country are uploading into the My Health Record, which she said was another threefold increase over the last year for tests being uploaded.",Intransitive,1,Agent,1,McMahon,uploading,tests,0,agent
+"GoPro is uploading more often to its main YouTube channel, now with more than 2.2 million subscribers.",Intransitive,1,Agent,0,GoPro,uploading,,1,agent
+But you co-own it with whatever platform you're uploading into.,Intransitive,0,Agent,1,you,co-own,it,0,agent
+"Sadly, if you're uploading from iOS or Android, this limit is still applicable.",Intransitive,0,Agent,0,you,uploading,,0,agent
+"The Health Security Agency said a total of 40 countries have uploaded 8,040 BA.2 sequences since Nov.",Transitive,1,Agent,1,The Health Security Agency,said,"a total of 40 countries have uploaded 8,040 BA.2 sequences since Nov.",1,agent
+"Since mid-November, more than three dozen countries have uploaded nearly 15,000 genetic sequences of BA.2 to GISAID, a global platform for sharing coronavirus data.",Transitive,1,Agent,1,more than three dozen countries,uploaded,"nearly 15,000 genetic sequences of BA.2 to GISAID, a global platform for sharing coronavirus data",1,agent
+"As per data, between January 1 and 24, a total of 1,98,000 people have uploaded their test results of whom 4,397 are positive.",Transitive,0,Agent,0,"a total of 1,98,000 people",have uploaded,,1,subject
+"The seller also claims that this is the "" one and only working Larrabee prototype in the world, "" and they appear to have uploaded a YouTube video showing the GPU installed in a desktop and running on Windows.",Transitive,0,Agent,1,seller,claims,"that this is the ""one and only working Larrabee prototype in the world""",0,agent
+"Many of her followers highlight her biracial background admiringly, calling her a "" biracial beauty, "" while others have uploaded tutorials on how to wear makeup to look more like Gu, with "" biracial vibes.",Transitive,0,Agent,0,Many of her followers,highlight,,0,agent
+"This meeting includes the landlord, the tenant and a court-trained mediator who makes sure both parties have uploaded the proper paperwork, and sees if they can work out a deal.",Transitive,0,Agent,1,a court-trained mediator,makes sure,both parties have uploaded the proper paperwork,1,agent
+"According to Spotify, there are over 8 million artists on its platform, of which about 2.6 million have uploaded at least ten songs.",Transitive,0,Agent,0,there,are,,1,subject
+"At the same time, Blizzard boss Mike Ybarra emailed staff saying they'll continue to require vaccination for at least the next few months and that about 80% of their employees in Irvine, Austin, and Albany have uploaded proof of vaccination.",Transitive,0,Agent,1,Mike Ybarra,emailed,staff,0,agent
+"What they do seem to know is that doctors have uploaded almost 15,000 genetic sequences of BA.2 to a global COVID database shared by researchers around the world.",Transitive,0,Agent,1,they,know,"that doctors have uploaded almost 15,000 genetic sequences of BA.2 to a global COVID database shared by researchers around the world.",0,agent
+"An hour and a quarter later, the pigeons had reached their destination in Skegness 120km away, while only 24% of a 300MB file had uploaded.",Intransitive,1,Patient,0,the pigeons,had reached,their destination in Skegness 120km away,0,agent
+"It's centuries into the future, self-aware technology has formed a "" singularity "" -- a floating superbrain cloud in the upper atmosphere -- and his parents have already uploaded to it, leaving their bodies behind.",Intransitive,0,Patient,0,self-aware technology,formed,,1,agent
+"It was revealed that she'd actually uploaded -- potentially meaning that she had ended her own life in order to come join Nathan, who had just broken up with her a few days before.",Intransitive,0,Patient,0,It,was revealed,,1,subject
+"By providing easy access to the vast archive (130,000 photos have already uploaded just to break the electronic ground) Holocaust deniers will be easily be exposed as flat-earthers and disturbed conspiracy theorists.",Intransitive,1,Patient,0,Holocaust deniers,will be exposed,,1,agent
+It appears that only new photos will upload at this point.,Intransitive,1,Patient,1,It,appears,that only new photos will upload at this point.,1,subject
+Your activities from HR2VP will upload to Strava in an instant.,Intransitive,1,Patient,1,Your activities from HR2VP,upload,to Strava,1,agent
+Simply drag the picture onto the email from your files and it will upload and appear at the top.,Intransitive,1,Patient,1,you,drag,the picture,0,agent
+"When you've selected the image you want, it will upload to the site and appear below the reply/text box that you are creating and give you 2 choices: ",Intransitive,1,Patient,0,you,have selected,,0,agent
+"If you want to spend your Saturday watching the entire run, the VODs will upload later to GDQ's YouTube channel, or you can jump to the 12:51:00 mark in this Twitch archive.",Intransitive,1,Patient,0,you,want,,0,agent
+"YouTube's Content ID checks for copyrighted material as it's uploading, and analyzes the video's content, description, and metadata for "" Ad Suitability "" issues.",Intransitive,1,Patient,1,YouTube's Content ID,checks,for copyrighted material,1,agent
+"Want to stream 4K video, while someone else is using a data-hungry program that's uploading to the internet? Say no more.",Intransitive,1,Agent,0,you,Say,no more.,0,agent
+Hopefully this photo is more clear - not sure why they're uploading blurry...,Intransitive,1,Patient,0,this photo,is,,1,subject
+"And at least initially, activities recorded with the Fitbit app on Wear watches will not upload to Google Fit.",Intransitive,1,Patient,1,activities recorded with the Fitbit app on Wear watches,upload,to Google Fit,1,agent
+It will not upload to comments if it is over that size.,Intransitive,1,Patient,0,It,upload,,1,subject
+"If you are trying to do a short sale in CA and you are not a Remax agent, the file will not upload to Equator.",Intransitive,1,Patient,0,you,trying,,0,agent
+"The Lightning is shipping to customers now with a starting price of $39,974 before any options and fees.",Intransitive,1,Patient,0,The Lightning,is shipping,,1,subject
+OnePlus' budget phone is shipping with Android 11.,Intransitive,1,Patient,1,OnePlus' budget phone,is shipping,Android 11,1,agent
+Summer Is Tomorrow is shipping in from Dubai after finishing second in the Grade II UAE Derby.,Intransitive,0,Patient,1,Summer Is Tomorrow,shipping,in from Dubai after finishing second in the Grade II UAE Derby.,1,subject
+"The company is also rolling out hot-updates, so you can keep using an app even while an update for the very same app is downloading and installing in the background.",Intransitive,1,Patient,0,The company,is rolling out,,1,agent
+"The company is also rolling out hot-updates, so you can keep using an app even while an update for the very same app is downloading and installing in the background.",Intransitive,1,Patient,0,The company,is rolling out,,1,agent
+"While this is downloading and installing, you'll be able to use the new Xbox app to start tinkering with the settings.",Intransitive,1,Patient,0,you,be able to use,the new Xbox app,0,agent
+"While this is downloading and installing, you'll be able to use the new Xbox app to start tinkering with the settings.",Intransitive,1,Patient,0,you,be able to use,the new Xbox app,0,agent
+Bristle will upload your test results to your online account.,Transitive,1,Agent,1,Bristle,upload,your test results,1,agent
+That's when the Webb team will upload observations of galaxy mergers to a website for her and her colleagues to access.,Transitive,0,Agent,1,the Webb team,upload,observations of galaxy mergers,1,agent
+"Typically, Nucleus users will upload their own genetic results previously obtained by an at-home testing company like 23andMe or Ancestry.",Transitive,0,Agent,1,Nucleus users,upload,their own genetic results previously obtained by an at-home testing company like 23andMe or Ancestry.,0,agent
+Sometimes people will upload a game before it's taken down after a year or so.,Transitive,0,Agent,1,people,upload,a game,0,agent
+"A lot of underground acts have these online haters, and they just will upload random songs and tag the artist, "" he says.",Transitive,0,Agent,1,A lot of underground acts,have,these online haters,1,agent
+"His bio stated he'd been uploading music since he was 11 and said he had "" net worth "" that was "" estimated at $100 thousand.",Transitive,0,Agent,0,His bio,stated,,0,agent
+They also claim they have the GTA VI source code and will upload it.,Transitive,0,Agent,1,They,claim,they have the GTA VI source code,0,agent
+"They will upload a video, and two hours later they are swapping thumbnails.",Transitive,0,Agent,1,They,upload,a video,0,agent
+"After collecting the data, volunteers will upload it to BioBase, which will generate a multilayered map.",Transitive,0,Agent,1,volunteers,upload,it,0,agent
+"And the way it works is that they will upload a hash to a common database, so basically a digital fingerprint, of that video that then platforms can run any uploads to their platform against.",Transitive,0,Agent,1,they,upload,a hash,0,agent
+I will upload more footage from these walks on my YouTube channel.,Transitive,0,Agent,1,I,upload,more footage from these walks on my YouTube channel.,0,agent
+The rapper had been uploading videos to TikTok since the end of last year.,Transitive,0,Agent,1,The rapper,had been uploading,videos to TikTok,0,agent
+He's been uploading videos so students can stay caught up despite quarantine.,Transitive,0,Agent,1,He,uploading,videos,0,agent
+"Once you've been uploading content regularly, you'll start to notice the trend on how each post performs.",Transitive,0,Agent,0,you,notice,,0,agent
+The cast members have also been uploading photos onto social media.,Transitive,0,Agent,1,The cast members,have been uploading,photos,0,agent
+The parody videos that' Squid Game' viewers have been uploading are so fun.,Transitive,0,Agent,1,The parody videos that 'Squid Game' viewers have been uploading,are,so fun,1,agent
+Some even think we will eventually upload ourselves into silicon brains or virtual worlds and escape our carbon bodies altogether.,Transitive,0,Agent,0,we,think,,0,agent
+Click this and then unzip the file when it has downloaded.,Intransitive,1,Patient,1,you,unzip,the file,0,agent
+"Once the application has downloaded, run it. ",Intransitive,1,Patient,1,the application,downloaded,it,1,agent
+"When the file has downloaded, install it and choose' Join' from the initial screen.",Intransitive,1,Patient,1,the file,downloaded,it,1,agent
+"If the apps haven't downloaded yet, they show up as a gray icon in a circle.",Intransitive,1,Patient,1,the apps,downloaded,yet,1,agent
+You'll be prompted and Windows 11 will download to it.,Intransitive,1,Patient,1,You,be prompted,Windows 11,0,agent
+"Once that's done, Steam will download to your machine, at which point you can login and start downloading games.",Intransitive,1,Patient,1,Steam,download,to your machine,1,agent
+"The update will download, and your iPhone will automatically restart once it's ready.",Intransitive,1,Patient,1,your iPhone,restart,once it's ready,1,patient
+"Changes to the name and logo will come via title updates that will download automatically,  the EA rep explained to Kotaku.",Intransitive,1,Patient,1,Changes to the name and logo,come,via title updates,1,agent
+This report will download for your use.,Intransitive,1,Patient,1,This report,will download,for your use,1,agent
+The game downloaded and installed in 50 seconds the first time and in 55 seconds on the second installation.,Intransitive,1,Patient,1,The game,downloaded and installed,in 50 seconds the first time and in 55 seconds on the second installation,1,agent
+The game downloaded and installed in 50 seconds the first time and in 55 seconds on the second installation.,Intransitive,1,Patient,1,The game,downloaded and installed,in 50 seconds the first time and in 55 seconds on the second installation,1,agent
+"As the games downloaded and appeared on my dashboard, I'd pop into them to see what was what.",Intransitive,1,Patient,1,I,pop,into them,0,agent
+A 2.9GB game downloaded in less than a minute.,Intransitive,1,Patient,0,A 2.9GB game,downloaded,,1,subject
+The FX20 is expected to be shipping worldwide in the first half of 2022.,Intransitive,1,Patient,0,The FX20,is expected,,1,subject
+"Of course, this version won't be shipping with Flash Player.",Intransitive,1,Patient,0,this version,shipping,,1,subject
+It will be shipping to customers from September 15.,Intransitive,1,Patient,0,It,will be shipping,,1,subject
+The Nano-C98 will be shipping in November at $245 US.,Intransitive,1,Patient,0,The Nano-C98,will be shipping,,1,subject
+"They'll be shipping in the next two to three weeks, so get your tickets now.",Intransitive,1,Patient,0,They,shipping,,0,agent
+The game will install onto the PS5's hard drive and you'll be able to play it as long as the disc is in the system.,Intransitive,1,Patient,1,The game,install,onto the PS5's hard drive,1,agent
+Code Blocks will install and is ready to be used.,Intransitive,1,Patient,1,Code Blocks,install,and is ready to be used,1,agent
+"What there is, is a BazarLoader executable file that will install instead.",Intransitive,1,Patient,0,there,is,,1,subject
+Completed rides will automatically upload to all authorized third party accounts.,Intransitive,1,Patient,1,Completed rides,upload,to all authorized third party accounts,1,agent
+The data will automatically download in the background while you play World of Warcraft or while you have the Launcher window open.,Intransitive,1,Patient,0,The data,download,,1,subject
+The new content will automatically download when you log-in to play the game.,Intransitive,1,Patient,1,The new content,will download,automatically,1,agent
