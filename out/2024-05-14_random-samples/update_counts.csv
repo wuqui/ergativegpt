@@ -1,0 +1,11 @@
+verb,var,class,freq
+update,subject_role,NoSubject,51
+update,subject_role,patient,26
+update,subject_role,agent,22
+update,subject_animacy,NoSubject,51
+update,subject_animacy,inanimate,29
+update,subject_animacy,animate,19
+update,transitivity,transitive,54
+update,transitivity,intransitive,45
+update,causativity,causative,98
+update,causativity,anticausative,1

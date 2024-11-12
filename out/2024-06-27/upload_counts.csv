@@ -1,0 +1,8 @@
+verb,var,class,freq
+upload,causativity,causative,100
+upload,transitivity,transitive,73
+upload,transitivity,intransitive,27
+upload,subject_animacy,animate,71
+upload,subject_animacy,inanimate,29
+upload,subject_role,agent,74
+upload,subject_role,patient,26

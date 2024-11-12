@@ -1,0 +1,9 @@
+verb,var,class,freq
+screen,causativity,causative,161
+screen,causativity,anticausative,23
+screen,transitivity,transitive,108
+screen,transitivity,intransitive,76
+screen,subject_animacy,animate,111
+screen,subject_animacy,inanimate,73
+screen,subject_role,agent,109
+screen,subject_role,patient,75

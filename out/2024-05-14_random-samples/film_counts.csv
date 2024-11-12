@@ -1,0 +1,11 @@
+verb,var,class,freq
+film,subject_role,agent,44
+film,subject_role,patient,39
+film,subject_role,NoSubject,17
+film,subject_animacy,animate,46
+film,subject_animacy,inanimate,37
+film,subject_animacy,NoSubject,17
+film,transitivity,transitive,50
+film,transitivity,intransitive,50
+film,causativity,causative,89
+film,causativity,anticausative,11

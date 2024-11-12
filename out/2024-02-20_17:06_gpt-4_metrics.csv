@@ -1,0 +1,17 @@
+variable,metric,score
+transitivity,precision,0.96
+transitivity,recall,0.68
+transitivity,accuracy,0.725
+transitivity,F1,0.8
+causativity,precision,0.59
+causativity,recall,0.27
+causativity,accuracy,0.54
+causativity,F1,0.37
+subject_animacy,precision,0.99
+subject_animacy,recall,0.87
+subject_animacy,accuracy,0.895
+subject_animacy,F1,0.93
+subject_role,precision,0.88
+subject_role,recall,0.36
+subject_role,accuracy,0.52
+subject_role,F1,0.52

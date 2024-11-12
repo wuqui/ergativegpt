@@ -1,0 +1,9 @@
+verb,var,class,freq
+download,causativity,causative,98
+download,causativity,anticausative,1
+download,transitivity,transitive,79
+download,transitivity,intransitive,20
+download,subject_animacy,animate,78
+download,subject_animacy,inanimate,21
+download,subject_role,agent,80
+download,subject_role,patient,19

@@ -1,0 +1,3 @@
+text,subj_synt,subj_sem,subj_animacy,subj_role,obj_synt,obj_sem
+He passed the ball.,He,He,animate,agent,the ball,the ball
+He uploads to YouTube.,He,He,animate,agent,NoObject,content

@@ -1,0 +1,8 @@
+field_name,description
+gpt_transitivity,Whether this use of the verb should be labelled either `transitive` or `intransitive`.
+gpt_causativity,Whether this use of the verb should be labelled as `causative` or `anticausative`.
+gpt_subject_animacy,"Whether the subject of the verb should be labelled as `animate` or `inanimate`; If there is no overt syntactic subject, mark with `NoSubject`."
+gpt_subject_role,"Whether the semantic role of the subject of the verb should be labelled as either `agent` or `patient`. If there is no overt syntactic subject related to the verb, mark with `NoSubject`."
+gpt_subject,The subject in this utterance that you considered for your classification.
+gpt_verb,The verb in this utterance that you considered for your classification.
+gpt_object,The object in this utterance that you considered for your classification.

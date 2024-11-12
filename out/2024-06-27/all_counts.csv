@@ -1,0 +1,9 @@
+var,class,freq
+causativity,anticausative,280
+causativity,causative,1104
+subject_animacy,animate,680
+subject_animacy,inanimate,704
+subject_role,agent,736
+subject_role,patient,648
+transitivity,intransitive,695
+transitivity,transitive,689
