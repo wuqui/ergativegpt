@@ -1,0 +1,40 @@
+# Configuration for 2025-06-23 experiment
+experiment:
+  name: "2025-06-23-subsamples"
+  date: "2025-06-23"
+  description: "Classification of linguistic subsamples with new ID structure"
+
+data:
+  input_dir: "../in/2025-05-19/Subsamples/"
+  pattern: "*_sub.xlsx"
+  prompt_file: "../in/2025-05-19/Subsamples/prompt_2025-03-07.md"
+  
+output:
+  dir: "../out/2025-06-23/"
+  
+model:
+  provider: "openai"
+  name: "o4-mini"
+  # Alternative models:
+  # name: "o3-mini" 
+  # name: "gpt-4o"
+
+processing:
+  # Verb to process (if processing single verb)
+  target_verb: "close"
+  target_file: "COHA_close_sub.xlsx"
+  
+  # Batch processing options
+  batch_size: 10
+  max_retries: 3
+
+metrics:
+  variables:
+    transitivity:
+      pos_label: "intransitive"
+    causativity:
+      pos_label: "anticausative"
+    subject_role:
+      pos_label: "patient"
+    subject_animacy:
+      pos_label: "inanimate" 

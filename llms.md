@@ -1,0 +1,176 @@
+# LLMs for linguistic annotation
+
+This file documents the large language models (LLMs) and prompts used in this project for collaboration purposes.
+
+## Project Structure (Enhanced nbdev)
+
+The project now uses an **enhanced nbdev structure** for better organisation and reproducibility:
+
+```
+ergativegpt/
+├── nbs/                           # Notebooks for development
+│   ├── 00_core.ipynb             # Core models and classes
+│   ├── 01_src.ipynb              # Legacy source functions  
+│   ├── 02_data.ipynb             # Data loading and validation
+│   ├── 03_config.ipynb           # Configuration management
+│   └── experiments/              # Experiment-specific notebooks
+│       ├── 2025-06-23.ipynb     # Clean experiment notebook
+│       └── config/
+│           └── 2025-06-23.yaml  # Experiment configuration
+├── ergativegpt/                  # Generated Python library
+│   ├── core.py                  # Exported from 00_core.ipynb
+│   ├── data.py                  # Exported from 02_data.ipynb  
+│   ├── config.py                # Exported from 03_config.ipynb
+│   └── src.py                   # Legacy functions
+├── in/                          # Input data (organised by date)
+├── out/                         # Output results (organised by date)
+└── settings.ini                 # nbdev configuration
+```
+
+### Key Benefits
+
+- **No code duplication**: Reusable functions in library modules
+- **Configuration-driven**: YAML files for experiment settings
+- **Clean separation**: Development notebooks vs experiment notebooks
+- **Version control friendly**: Generated library code tracks changes
+- **Documentation integrated**: nbdev auto-generates docs
+
+## Usage
+
+### Running a new experiment
+
+1. Create configuration file in `nbs/experiments/config/`
+2. Use library functions in experiment notebooks:
+   ```python
+   from ergativegpt.data import read_linguistic_data
+   from ergativegpt.config import load_config
+   
+   config = load_config('config/my-experiment.yaml')
+   df = read_linguistic_data(config.input_file)
+   ```
+3. Export changes: `nbdev_export`
+
+## Models
+
+- `o4-mini` (via OpenAI API): Used for the classification tasks in the notebooks.
+
+## Data Structure Evolution
+
+### 2025-05-19 Update
+- **New columns**: `ID`, `ambiguous_target_verb`, `pos`, `gpt_pos`
+- **Data location**: `in/2025-05-19/Subsamples/` (subsample files with `_sub.xlsx` suffix)
+- **ID format**: e.g., `COHA_close_1`, `COHA_close_2`, etc.
+- **Workflow**: Use `nbs/experiments/2025-06-23.ipynb` for processing the new subsamples
+
+### Previous Structure (2025-04-14)
+- **Data location**: `in/2025-04-14/`
+- **Workflow**: Used `nbs/2025-04-14.ipynb`
+
+## Prompts
+
+### Annotation Prompt (2025-03-07)
+
+The following prompt is used to instruct the LLM to perform linguistic annotation.
+
+```markdown
+# Task
+
+As a corpus linguistic annotator for a linguistic research project, your job is to analyze sentences from a web corpus. You will be presented with an attestation of a verb and its context in the corpus (e.g. "'was uploading' in: 'He was uploading the files'".) and you have to analyze the usage of this verb in its immediate clause context according to several variables.
+
+## Variables
+
+### Part of Speech 
+
+**Task**: Identify whether the attestation is a verb or not. Label it `verb` or `other`.
+
+**Definitions**:
+
+- `verb`: A verb indicates the occurrence or performance of an action or the existence of a state or condition. 
+- `other`: Any other part of speech such as an adjective or a noun. An adjective designates an attribute and qualifies a noun to describe it more fully. A noun designates a person, place or thing.
+
+**Examples**:
+
+- `verb`: "'was opened' in: 'The door was opened.'" (Label as `verb`; "was opened" is a verb and indicates the occurrence of an action.)
+- `verb`: "'closed' in: 'He closed the door.'" (Label as `verb`; "closed" is a verb and indicates the performance of an action.)
+- `verb`: "'closed up' in: 'The bank closed up one of its branches.'" (Label as `verb`; "closed up" is a verb and indicates the performance of an action.)
+- `other`: "'open' in: 'The door is open.'" (Label as `other`; "open" is an adjective and designates an attribute of the door.)
+- `other`: "'closed' in: 'The door was closed.'" (Label as `other`; "closed" is ambiguous between a passive, which indicates the occurrence of an action and an adjective, which designates an attribute of the door.)
+- `other`: "'close up' in: 'They filmed a close up.'" (Label as `other`; "close up" is a noun and designates a thing.)
+- `other`: "'splitting' in: 'He had a splitting headache.'" (Label as `other`; "splitting" is an adjective and designates an attribute of the headache.)
+
+### Subject Animacy
+
+**Task**: Identify whether the subject of the verb is `animate` or `inanimate`.
+
+**Definitions**:
+
+- `animate` subjects are living entities, typically people or animals, or organisations and geographical entities referring to groups of people. 
+- `inanimate` subjects are non-living entities, such as objects or concepts.
+
+**Examples**:
+
+- `animate`: "'barked' in: 'The dog barked loudly.'" (Label as `animate`; the subject of "barked" is "the dog" and it is a living entity.)
+- `animate`: "'released' in: 'Microsoft released a new software version.'" (Label as `animate`; the subject of "released" is "Microsoft" and it is an organisation that consists of a group of people.)
+- `animate`: "'installed' in: 'The city of Munich installed new park benches.'" (Label as `animate`; the subject of "installed" is "the city of Munich" and it is a geographical entity that refers to a local community of people.)
+- `inanimate`: "'struck' in: 'The clock struck midnight.'" (Label as `inanimate`; the subject of "struck" is "the clock" and it is a non-living object.)
+- `inanimate`: "'left' in: 'Her vanity left her heavily in debt.'" (Label as `inanimate`; the subject of "left" is "her vanity" and it is an abstract concept.)
+- `inanimate`: "'to install' in: 'Microsoft is easy to install.'" (Label as `inanimate`; the subject of "to install" is "Microsoft" and it is a software program and a non-living entity.)
+
+### Subject Role
+
+**Task**: Analyse the semantic role of the subject of the target verb.
+
+**Definitions**: 
+
+- `agent`: The subject of the verb performs or causes the action. It is typically a doer or a causative entity in the sentence.
+- `patient`: The subject of the verb undergoes the action. It is usually the entity that is acted upon or affected by the action.
+
+**Examples**:
+
+- `agent`: "'chased' in: 'The cat chased the mouse.'" (Label as `agent`; the subject of "chased" is "the cat" and it is performing the action of chasing.)
+- `agent`: "'is uploading' in: 'The girl is uploading to the platform daily.'" (Label as `agent`; the subject of "is uploading" is "the girl" and she is performing the action of uploading.)
+- `agent`: "'will download' in: 'Your phone will download installed apps automatically.'" (Label as `agent`; the subject of "will download" is "your phone" and it is performing the action of downloading.)
+- `patient`: "'was chased' in: 'The mouse was chased by the cat.'" (Label as `patient`; the subject of "was chased" is "the mouse" and it is undergoing the action of being chased.)
+- `patient`: "'is filming' in: 'The movie is currently filming in Prague.'" (Label as `patient`; the subject of "is filming" is "the movie" and it is undergoing the action of being filmed.)
+- `patient`: "'will download' in: 'The game will download automatically.'" (Label as `patient`; the subject of "will download" is "the game" and it is undergoing the action of being downloaded.)
+
+### Transitivity
+
+**Task**: Determine whether this use of the verb is `transitive` or `intransitive`. 
+
+**Definitions**:
+
+- `transitive` verbs directly act on a noun phrase that has the syntactic role of an explicit direct object in the clause.
+- `intransitive` verbs do not act on a noun phrase, or there is no noun phrase explicitly stated as being acted upon in the sentence; this also applies to verbs that have a prepositional object but no direct syntactical object.
+
+**Examples**:
+
+- `transitive`: "'approved' in: 'The committee approved the new policy.'" (Label as `transitive`; "the new policy" is the direct object of "approved".)
+- `transitive`: "'are uploading' in: 'Many teachers are uploading their classes online." (Label as `transitive`; "their classes" is the direct object of "are uploading".)
+- `transitive`: "'to improve' in: 'She was anxious to improve herself.'" (Label as `transitive`; "herself" is the direct object of "to improve".)
+- `intransitive`: "'was approved' in: 'The new policy was approved.'" (Label as `intransitive`; no direct object for "was approved".)
+- `intransitive`: "'are uploading' in: 'Many users are uploading to the platform daily.'" (Label as `intransitive`; no direct object for "are uploading".)
+- `intransitive`: "'will screen' in: 'The movie will screen at the film festival.'" (Label as `intransitive`; no direct object for "will screen".)
+
+### Causativity
+
+**Task**: Determine whether this use of the verb is `causative` or `anticausative`. 
+
+**Definitions**:
+
+- `causative` verbs indicate that one person or thing causes another person or thing to do something, or causes a change in state. They have an explicit or implied agent who performs or causes the action. Passive constructions are causative, because the passive implies an agent.
+- `anticausative` verbs indicate that a person or thing undergoes a change of state without an explicit or implied agent or cause. 
+
+**Examples**:
+
+- `causative`: "'opened' in: 'She opened the door.'" (Label as `causative`; "opened" has an explicit agent, "she", who caused the door to open.)
+- `causative`: "'open' in: 'Open the door!'" (Label as `causative`; "open" is an imperative and implies an agent, who will cause the door to open.)
+- `causative`: "'were uploaded' in: 'The images were uploaded.'" (Label as `causative`; "were uploaded" is passive and implies an agent, who caused the images to upload.)
+- `causative`: "'to be aired' in: 'The show is to be aired.'" (Label as `causative`; "to be aired" is a non-finite passive and implies an agent, who will cause the show to air.)
+- `causative`: "'to improve' in: 'He will try to improve.'" (Label as `causative`; "to improve" has an explicit agent "he", who will act on himself to improve.)
+- `anticausative`: "'opened' in: 'The door opened.'" (Label as `anticausative`; "opened" indicates a change of state of the subject "the door" without an explicit or implied agent or cause.)
+- `anticausative`: "'aired' in: 'The show first aired in 1993.'" (Label as `anticausative`; "aired" indicates a change of state of the subject "the show" without an explicit or implied agent or cause.)
+- `anticausative`: "'are uploading' in: 'The images are uploading.'" (Label as `anticausative`; "are uploading" indicates a change of state of the subject "the images" without an explicit or implied agent or cause.)
+- `anticausative`: "'to dry' in: 'How long does the paint need to dry?" (Label as `anticausative`; "to dry" indicates a change of state of the subject "the paint" without an explicit or implied agent or cause.)
+- `anticausative`: "'was improving' in: 'The doctor claimed that he was improving rapidly.'" (Label as `anticausative`; "was improving" indicates a change of state of the subject "he" without an explicit or implied agent or cause.)
+```
