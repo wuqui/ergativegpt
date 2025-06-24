@@ -1,0 +1,17 @@
+verb,var,metric,value
+screen,causativity,precision,0.32
+screen,causativity,recall,1.0
+screen,causativity,fscore,0.49
+screen,causativity,accuracy,0.74
+screen,subject_animacy,precision,0.88
+screen,subject_animacy,recall,0.92
+screen,subject_animacy,fscore,0.9
+screen,subject_animacy,accuracy,0.92
+screen,subject_role,precision,0.97
+screen,subject_role,recall,0.82
+screen,subject_role,fscore,0.89
+screen,subject_role,accuracy,0.92
+screen,transitivity,precision,0.96
+screen,transitivity,recall,0.92
+screen,transitivity,fscore,0.94
+screen,transitivity,accuracy,0.95

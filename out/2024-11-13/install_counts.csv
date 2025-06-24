@@ -1,0 +1,8 @@
+verb,var,class,freq
+install,subject_role,agent,57
+install,subject_role,patient,42
+install,subject_animacy,animate,52
+install,subject_animacy,inanimate,47
+install,transitivity,transitive,57
+install,transitivity,intransitive,42
+install,causativity,causative,99

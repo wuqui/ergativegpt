@@ -1,0 +1,9 @@
+verb,var,class,freq
+air,subject_role,patient,368
+air,subject_role,agent,176
+air,subject_animacy,inanimate,386
+air,subject_animacy,animate,158
+air,transitivity,intransitive,370
+air,transitivity,transitive,174
+air,causativity,causative,315
+air,causativity,anticausative,229

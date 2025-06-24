@@ -1,0 +1,9 @@
+verb,var,class,freq
+stream,subject_role,agent,113
+stream,subject_role,patient,35
+stream,subject_animacy,animate,83
+stream,subject_animacy,inanimate,65
+stream,transitivity,transitive,94
+stream,transitivity,intransitive,54
+stream,causativity,causative,134
+stream,causativity,anticausative,14

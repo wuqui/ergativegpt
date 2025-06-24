@@ -1,0 +1,37 @@
+verbs:
+  - air
+  - screen
+  - upload
+  - install
+  - film
+  - stream
+  - download
+  - update
+
+column_values:
+  causativity:
+    - causative
+    - anticausative
+  transitivity:
+    - transitive
+    - intransitive
+  subject_animacy:
+    - animate
+    - inanimate
+  subject_role:
+    - agent
+    - patient
+
+metrics:
+  subject_role:
+    average: binary
+    pos_label: patient
+  subject_animacy:
+    average: binary
+    pos_label: inanimate
+  transitivity:
+    average: binary
+    pos_label: intransitive
+  causativity:
+    average: binary
+    pos_label: anticausative
